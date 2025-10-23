@@ -11,5 +11,6 @@ form.addEventListener('submit', e => {
     return;
   }
 
-  fetchPic(formInput.value);
+  const data = fetchPic(formInput.value);
+  console.log(data);
 });
