@@ -40,6 +40,7 @@ form.addEventListener('submit', e => {
 
   fetchPic(searchQuerry)
     .then(data => {
+      formInput.value = '';
       if (data.hits.length === 0) {
         iziToast.error({
           message:
@@ -51,7 +52,6 @@ form.addEventListener('submit', e => {
         return;
       }
 
-      formInput.value = '';
       const galleryLoaded = renderGallery(data.hits);
       gallery.innerHTML = galleryLoaded;
       simplelightbox.refresh();
